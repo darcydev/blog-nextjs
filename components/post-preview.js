@@ -1,17 +1,35 @@
 import Link from "next/link";
+import styled from "styled-components";
 
 export default function PostPreview({ title, coverImage, date, excerpt, author, slug }) {
   return (
-    <div>
-      <div className='mb-5'>
-        <img src={coverImage.url} alt='' />
-      </div>
-      <h3 className='text-3xl mb-3 leading-snug'>
-        <Link as={`/posts/${slug}`} href='/posts/[slug]'>
-          <a>{title}</a>
-        </Link>
-      </h3>
-      <p className='text-lg leading-relaxed mb-4'>{excerpt}</p>
-    </div>
+    <StyledContainer>
+      <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+        <img src={coverImage.url} alt={title} />
+      </Link>
+      <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+        <h4>{title}</h4>
+      </Link>
+      <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+        <p>{date}</p>
+      </Link>
+    </StyledContainer>
   );
 }
+
+const StyledContainer = styled.div`
+  padding: 0 20px;
+  margin: 0 0 40px 0;
+  flex: 0 0 32%;
+  text-align: left;
+
+  img {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+  }
+
+  h4 {
+    margin: 10px 0;
+  }
+`;

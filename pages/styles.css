@@ -1,3 +1,70 @@
 body {
   margin: 0;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+h2 {
+  color: #00833e;
+  font-size: 36px;
+  margin: 0 0 30px 0;
+}
+
+h3 {
+  color: #00833e;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 30px;
+  color: rgba(49, 50, 51, 1);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+p {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 1);
+}
+
+section {
+  padding: 70px 0;
+}
+
+section .content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+button {
+  text-transform: uppercase;
+  background-color: #00833e;
+  border: 1px solid #00833e;
+  color: #fff;
+  padding: 14px 34px;
+  border-radius: 32px;
+  font-weight: 300;
+  cursor: pointer;
+  width: 169px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background: #fff;
+  border: 1px solid #00833e;
+  color: #00833e;
+  transition: all 0.3s linear;
 }

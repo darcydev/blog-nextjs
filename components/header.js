@@ -6,7 +6,7 @@ export default function Header() {
     <StyledContainer>
       <div className='content'>
         <Link href='/'>
-          <a>Blog 2</a>
+          <a>Cattell Cooper</a>
         </Link>
       </div>
     </StyledContainer>
@@ -14,8 +14,8 @@ export default function Header() {
 }
 
 const StyledContainer = styled.header`
-  background: #efefef;
-  height: 70px;
+  background: #00833e;
+  height: 65px;
 
   .content {
     height: 100%;
@@ -26,11 +26,8 @@ const StyledContainer = styled.header`
     a {
       font-size: 30px;
       text-decoration: none;
-      color: #000;
-
-      &:hover {
-        color: purple;
-      }
+      color: #fff;
+      font-weight: 700;
     }
   }
 `;
