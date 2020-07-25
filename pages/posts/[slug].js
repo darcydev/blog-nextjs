@@ -4,6 +4,7 @@ import ErrorPage from "next/error";
 
 import Container from "../../components/container";
 import Layout from "../../components/layout";
+import PostTitle from "../../components/post/post-title";
 import PostHeader from "../../components/post/post-header";
 import PostBody from "../../components/post/post-body";
 
