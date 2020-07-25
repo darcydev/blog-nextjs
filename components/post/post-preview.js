@@ -1,5 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
+import dayjs from "dayjs";
+import { MdAccessTime } from "react-icons/md";
 
 export default function PostPreview({ title, coverImage, date, excerpt, author, slug }) {
   return (
@@ -10,9 +12,10 @@ export default function PostPreview({ title, coverImage, date, excerpt, author, 
       <Link as={`/posts/${slug}`} href='/posts/[slug]'>
         <h4>{title}</h4>
       </Link>
-      <Link as={`/posts/${slug}`} href='/posts/[slug]'>
-        <p>{date}</p>
-      </Link>
+      <div className='date-wrp'>
+        <MdAccessTime />
+        <span>{dayjs(date).format("MMMM DD, YYYY")}</span>
+      </div>
     </StyledContainer>
   );
 }
@@ -27,9 +30,21 @@ const StyledContainer = styled.div`
     width: 100%;
     height: 450px;
     border-radius: 10px;
+    cursor: pointer;
   }
 
   h4 {
-    margin: 10px 0;
+    margin: 20px 0 40px 0;
+    cursor: pointer;
+  }
+
+  .date-wrp {
+    display: flex;
+    align-items: center;
+    height: 30px;
+
+    svg {
+      margin-right: 7px;
+    }
   }
 `;

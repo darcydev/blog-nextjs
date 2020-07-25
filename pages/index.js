@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import PageBanner from "../components/page-banner";
-import PostPreview from "../components/post-preview";
+import PostPreview from "../components/post/post-preview";
 
 import { getAllPostsForHome } from "../lib/api";
 
@@ -24,6 +24,7 @@ export async function getStaticProps({ preview = false }) {
     props: { preview, allPosts },
   };
 }
+p0;
 
 export default function Index({ preview, allPosts }) {
   return (
