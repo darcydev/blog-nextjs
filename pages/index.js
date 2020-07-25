@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import PageBanner from "../components/page-banner";
-import PostPreview from "../components/post/post-preview";
+import PostTile from "../components/post/post-preview";
 
 import { getAllPostsForHome } from "../lib/api";
 
@@ -24,7 +24,6 @@ export async function getStaticProps({ preview = false }) {
     props: { preview, allPosts },
   };
 }
-p0;
 
 export default function Index({ preview, allPosts }) {
   return (
@@ -93,20 +92,16 @@ export default function Index({ preview, allPosts }) {
                 <h3>Blog</h3>
                 <p>Our latest news:</p>
                 <StyledPostsWrapper>
-                  {allPosts.map((v) => {
-                    console.log("v :>> ", v);
-
-                    return (
-                      <PostPreview
-                        title={v.title}
-                        coverImage={v.coverImage}
-                        date={v.date}
-                        excerpt={v.excerpt}
-                        author={v.author}
-                        slug={v.slug}
-                      />
-                    );
-                  })}
+                  {allPosts.map((v) => (
+                    <PostTile
+                      title={v.title}
+                      coverImage={v.coverImage}
+                      date={v.date}
+                      excerpt={v.excerpt}
+                      author={v.author}
+                      slug={v.slug}
+                    />
+                  ))}
                 </StyledPostsWrapper>
               </div>
             </div>
