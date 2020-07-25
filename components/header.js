@@ -6,7 +6,7 @@ export default function Header() {
     <StyledContainer>
       <div className='content'>
         <Link href='/'>
-          <a>Blog</a>
+          <a>Blog 2</a>
         </Link>
       </div>
     </StyledContainer>
