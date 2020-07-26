@@ -9,7 +9,7 @@ export default function Footer() {
       <div className='content'>
         <div className='row'>
           {navLinks.map((v) => (
-            <Link href={`${v.link}`}>
+            <Link key={v.name} href={`${v.link}`}>
               <a aria-label={v.name}>{v.name}</a>
             </Link>
           ))}
@@ -34,9 +34,24 @@ const StyledContainer = styled.footer`
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
 
-  p {
-    color: #fff;
+    .row {
+      text-align: center;
+      margin: 10px 0;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 20px;
+
+        &:hover {
+          color: ${({ theme }) => theme.color.primary};
+        }
+      }
+
+      p {
+        color: #fff;
+      }
+    }
   }
 `;

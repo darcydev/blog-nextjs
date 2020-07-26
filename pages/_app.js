@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import "./styles.css";
 
 const theme = {
-  colors: {
+  color: {
     primary: "#00833e",
   },
 };

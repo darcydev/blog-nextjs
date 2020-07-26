@@ -29,11 +29,11 @@ h4 {
 p {
   font-weight: 400;
   font-style: normal;
-  font-size: 17px;
+  font-size: 16px;
   text-transform: none;
   letter-spacing: 0;
   line-height: 28px;
-  color: rgba(0, 0, 0, 1);
+  color: #000;
 }
 
 section {
@@ -41,7 +41,7 @@ section {
 }
 
 section .content {
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }

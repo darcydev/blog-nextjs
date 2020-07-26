@@ -24,7 +24,7 @@ export default function Blog({ preview, allPosts }) {
           <PageBanner title='Blog' img='./banner--home.jpg' />
           <StyledSection>
             <div className='content'>
-              <StyledPostsWrapper className='col'>
+              <StyledPostsWrapper>
                 {allPosts.map((v) => (
                   <PostPreview
                     key={v.slug}
@@ -37,7 +37,7 @@ export default function Blog({ preview, allPosts }) {
                   />
                 ))}
               </StyledPostsWrapper>
-              <div className='col'>
+              <div className='search-wrp'>
                 <SearchBar />
               </div>
             </div>
@@ -51,9 +51,24 @@ export default function Blog({ preview, allPosts }) {
 const StyledSection = styled.section`
   .content {
     display: flex;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+
+    .search-wrp {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+    }
   }
 `;
 
 const StyledPostsWrapper = styled.div`
   width: 75%;
+
+  @media (max-width: 800px) {
+    flex: 0 0 99%;
+    width: 100%;
+  }
 `;

@@ -35,18 +35,36 @@ export default function PostPreview({ title, coverImage, date, excerpt, author, 
 
 const StyledContainer = styled.div`
   display: flex;
-  padding: 30px 0;
+  padding: 30px;
   border-bottom: 1px solid #efefef;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 800px) {
+    padding: 50px;
+  }
 
   img {
     width: 430px;
-    height: 550px;
+    max-width: 50%;
+    height: auto;
+
+    @media (max-width: 800px) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   .content {
     display: flex;
     flex-direction: column;
     padding: 20px 40px 0 40px;
+
+    @media (max-width: 800px) {
+      padding: 20px 0 0 0;
+    }
 
     .title-wrp {
       h2 {
