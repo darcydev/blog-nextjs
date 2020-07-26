@@ -91,6 +91,7 @@ const StyledForm = styled.form`
       outline: none;
       color: #787878;
       font-size: 16px;
+      font-family: "Open Sans";
     }
 
     textarea {

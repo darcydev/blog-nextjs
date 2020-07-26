@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ScrollAnimation from "react-animate-on-scroll";
 
 import Layout from "../components/layout";
 import Container from "../components/container";
@@ -74,10 +75,12 @@ export default function Index({ preview, allPosts }) {
                 <div className='icons-wrp'>
                   {skillIcons.map((v) => {
                     return (
-                      <div className='icon-wrp'>
-                        <img src={`./icons/${v.icon}.svg`} alt={v.title} />
-                        <p>{v.title}</p>
-                      </div>
+                      <ScrollAnimation animateIn='fadeIn' delay={20} animateOnce={true}>
+                        <div className='icon-wrp'>
+                          <img src={`./icons/${v.icon}.svg`} alt={v.title} />
+                          <p>{v.title}</p>
+                        </div>
+                      </ScrollAnimation>
                     );
                   })}
                 </div>
@@ -93,14 +96,16 @@ export default function Index({ preview, allPosts }) {
                 <p>Our latest news:</p>
                 <StyledPostsWrapper>
                   {allPosts.map((v) => (
-                    <PostTile
-                      title={v.title}
-                      coverImage={v.coverImage}
-                      date={v.date}
-                      excerpt={v.excerpt}
-                      author={v.author}
-                      slug={v.slug}
-                    />
+                    <ScrollAnimation animateIn='fadeIn' delay={100} animateOnce={true}>
+                      <PostTile
+                        title={v.title}
+                        coverImage={v.coverImage}
+                        date={v.date}
+                        excerpt={v.excerpt}
+                        author={v.author}
+                        slug={v.slug}
+                      />
+                    </ScrollAnimation>
                   ))}
                 </StyledPostsWrapper>
               </div>

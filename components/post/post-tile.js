@@ -6,10 +6,10 @@ import { MdAccessTime } from "react-icons/md";
 export default function PostTile({ title, coverImage, date, excerpt, author, slug }) {
   return (
     <StyledContainer>
-      <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+      <Link as={`/blog/${slug}`} href='/blog/[slug]'>
         <img src={coverImage.url} alt={title} />
       </Link>
-      <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+      <Link as={`/blog/${slug}`} href='/blog/[slug]'>
         <h4>{title}</h4>
       </Link>
       <div className='date-wrp'>

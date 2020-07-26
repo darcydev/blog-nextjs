@@ -6,12 +6,12 @@ import { MdAccessTime } from "react-icons/md";
 export default function PostPreview({ title, coverImage, date, excerpt, author, slug }) {
   return (
     <StyledContainer>
-      <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+      <Link as={`/blog/${slug}`} href='/blog/[slug]'>
         <img src={coverImage.url} alt={title} />
       </Link>
       <div className='content'>
         <div className='title-wrp'>
-          <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+          <Link as={`/blog/${slug}`} href='/blog/[slug]'>
             <h2>{title}</h2>
           </Link>
         </div>
@@ -24,7 +24,7 @@ export default function PostPreview({ title, coverImage, date, excerpt, author, 
           <p>{excerpt}</p>
         </div>
         <div className='btn-wrp'>
-          <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+          <Link as={`/blog/${slug}`} href='/blog/[slug]'>
             <p>READ MORE</p>
           </Link>
         </div>

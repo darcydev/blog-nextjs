@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ScrollAnimation from "react-animate-on-scroll";
 
 import Layout from "../components/layout";
 import Container from "../components/container";
@@ -26,15 +27,17 @@ export default function Blog({ preview, allPosts }) {
             <div className='content'>
               <StyledPostsWrapper>
                 {allPosts.map((v) => (
-                  <PostPreview
-                    key={v.slug}
-                    title={v.title}
-                    coverImage={v.coverImage}
-                    date={v.date}
-                    excerpt={v.excerpt}
-                    author={v.author}
-                    slug={v.slug}
-                  />
+                  <ScrollAnimation animateIn='fadeIn' delay={100}>
+                    <PostPreview
+                      key={v.slug}
+                      title={v.title}
+                      coverImage={v.coverImage}
+                      date={v.date}
+                      excerpt={v.excerpt}
+                      author={v.author}
+                      slug={v.slug}
+                    />
+                  </ScrollAnimation>
                 ))}
               </StyledPostsWrapper>
               <div className='search-wrp'>

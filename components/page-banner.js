@@ -7,13 +7,15 @@ export default function PageBanner({ img, title, subTitle }) {
   return (
     <StyledContainer img={img}>
       <div className='content'>
-        <div className='navbar-wrp'>
-          {navLinks.map((v) => (
-            <Link href={`${v.link}`}>
-              <a aria-label={v.name}>{v.name}</a>
-            </Link>
-          ))}
-        </div>
+        <StyledNav>
+          <div className='nav-content'>
+            {navLinks.map((v) => (
+              <Link href={`${v.link}`}>
+                <a aria-label={v.name}>{v.name}</a>
+              </Link>
+            ))}
+          </div>
+        </StyledNav>
         <div className='title-wrp'>
           <h1>{title}</h1>
         </div>
@@ -34,24 +36,7 @@ const StyledContainer = styled.div`
     background-size: cover;
     display: flex;
     flex-direction: column;
-
-    .navbar-wrp {
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25px 0;
-
-      a {
-        margin: 0 10px;
-        text-decoration: none;
-        color: #fff;
-
-        &:hover {
-          color: #00833e;
-        }
-      }
-    }
+    position: relative;
 
     .title-wrp {
       flex: 1;
@@ -64,6 +49,27 @@ const StyledContainer = styled.div`
         color: #fff;
         font-size: 60px;
         line-height: 70px;
+      }
+    }
+  }
+`;
+
+const StyledNav = styled.nav`
+  position: absolute;
+  top: 45px;
+  width: 100%;
+
+  .nav-content {
+    display: flex;
+    justify-content: center;
+
+    a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+
+      &:hover {
+        color: #00833e;
       }
     }
   }
