@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export default function Person({ name, title, bio, pic, picOnRight }) {
-  console.log("picOnRight :>> ", picOnRight);
-
   return (
     <StyledContainer picOnRight={picOnRight}>
       <div className='content'>
@@ -11,7 +8,9 @@ export default function Person({ name, title, bio, pic, picOnRight }) {
           <h2>
             {name}, {title}
           </h2>
-          <p>INSERT BIO...</p>
+          {bio.map((para) => (
+            <p>{para.content[0].value}</p>
+          ))}
         </div>
         <div className='img-wrp'>
           <img src={pic.url} alt={name} />
@@ -24,16 +23,43 @@ export default function Person({ name, title, bio, pic, picOnRight }) {
 const StyledContainer = styled.div`
   padding: 60px 30px;
 
+  @media (max-width: 800px) {
+    padding: 60px 60px;
+  }
+
   .content {
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+
     .text-wrp {
       order: ${({ picOnRight }) => (picOnRight ? 1 : 2)};
+      width: 50%;
+
+      @media (max-width: 800px) {
+        order: 2;
+        width: 100%;
+      }
     }
 
     .img-wrp {
       order: ${({ picOnRight }) => (picOnRight ? 2 : 1)};
+      margin-left: 50px;
+      width: 50%;
+
+      @media (max-width: 800px) {
+        order: 1;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 30px;
+      }
+
+      img {
+        max-width: 90%;
+      }
     }
   }
 `;

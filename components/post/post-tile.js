@@ -22,7 +22,7 @@ export default function PostTile({ title, coverImage, date, excerpt, author, slu
 
 const StyledContainer = styled.div`
   padding: 0 20px;
-  margin: 0 0 40px 0;
+  margin: 0;
   flex: 0 0 30%;
   text-align: left;
 
@@ -42,6 +42,7 @@ const StyledContainer = styled.div`
     display: flex;
     align-items: center;
     height: 30px;
+    font-size: 13px;
 
     svg {
       margin-right: 7px;

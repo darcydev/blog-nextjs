@@ -4,7 +4,8 @@ import ScrollAnimation from "react-animate-on-scroll";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import PageBanner from "../components/page-banner";
-import PostTile from "../components/post/post-preview";
+import PostTile from "../components/post/post-tile";
+import SectionTitle from "../components/section/section-title";
 
 import { getAllPostsForHome } from "../lib/api";
 
@@ -70,8 +71,7 @@ export default function Index({ preview, allPosts }) {
           <StyledSection>
             <div className='content'>
               <div className='col single-col'>
-                <h3>Skills</h3>
-                <p>We have extensive experience in:</p>
+                <SectionTitle title='Skills' subtitle='We have extensive experience in:' />
                 <div className='icons-wrp'>
                   {skillIcons.map((v) => {
                     return (
@@ -88,27 +88,27 @@ export default function Index({ preview, allPosts }) {
             </div>
           </StyledSection>
           <StyledBanner />
-          <div>INSERT TESTIMONAL SECTION</div>
+          <StyledTestiomonialsSection>
+            <div className='content'>
+              <SectionTitle title='Testimonials' subtitle='What our clients have said:' />
+              <div className='boxes-wrp'></div>
+            </div>
+          </StyledTestiomonialsSection>
           <StyledBlogsSection>
             <div className='content'>
-              <div className='col'>
-                <h3>Blog</h3>
-                <p>Our latest news:</p>
-                <StyledPostsWrapper>
-                  {allPosts.map((v) => (
-                    <ScrollAnimation animateIn='fadeIn' delay={100} animateOnce={true}>
-                      <PostTile
-                        title={v.title}
-                        coverImage={v.coverImage}
-                        date={v.date}
-                        excerpt={v.excerpt}
-                        author={v.author}
-                        slug={v.slug}
-                      />
-                    </ScrollAnimation>
-                  ))}
-                </StyledPostsWrapper>
-              </div>
+              <SectionTitle title='Blog' subtitle='Our latest news:' />
+              <StyledPostsWrapper>
+                {allPosts.map((v) => (
+                  <PostTile
+                    title={v.title}
+                    coverImage={v.coverImage}
+                    date={v.date}
+                    excerpt={v.excerpt}
+                    author={v.author}
+                    slug={v.slug}
+                  />
+                ))}
+              </StyledPostsWrapper>
             </div>
           </StyledBlogsSection>
         </Container>
@@ -158,16 +158,15 @@ const StyledSection = styled.section`
   }
 `;
 
-const StyledBlogsSection = styled.section`
-  .content {
-    display: flex;
+const StyledTestiomonialsSection = styled.section`
+  background: #c7fbc7;
+  padding: 160px;
 
-    .col {
-      margin: 0 auto;
-      text-align: center;
-    }
+  .boxes-wrp {
   }
 `;
+
+const StyledBlogsSection = styled.section``;
 
 const StyledPostsWrapper = styled.div`
   display: flex;
